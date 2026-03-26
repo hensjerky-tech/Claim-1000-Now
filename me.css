@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.tiktok-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(45deg, #FF0050, #00F2EA);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    box-shadow: 0 10px 30px rgba(255, 0, 80, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.tiktok-icon::before {
+    content: "♬";
+    color: white;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #FF0050, #00F2EA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #aaa;
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FF0050;
+    box-shadow: 0 0 0 3px rgba(255, 0, 80, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(90deg, #FF0050, #00F2EA);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 0, 80, 0.4);
+}
+
+.success-message {
+    display: none;
+    color: #00FF9D;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #666;
+}
+
